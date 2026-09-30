@@ -45,3 +45,11 @@ footer span:first-child{font-size:12px;color:var(--ink);letter-spacing:0}
 .step{grid-template-columns:38px 1fr 18px;gap:10px;padding:14px 0}.step strong{font-size:16px}
 footer{display:block}footer span{display:block;margin-top:5px}
 }
+
+.home-logo{width:76px;height:76px;margin:24px auto 0;display:block}
+.home-logo svg{display:block;width:100%;height:100%}
+.home-logo-outer{fill:var(--paper);stroke:var(--accent);stroke-width:1.5}
+.home-logo-inner{fill:none;stroke:#cfc8bd;stroke-width:.7}
+.home-logo-name{font-family:"DM Sans",Arial,sans-serif;font-size:5.1px;letter-spacing:1.35px;fill:var(--accent);text-transform:uppercase}
+.home-logo-mb{font-family:"Playfair Display",Georgia,serif;font-size:27px;font-weight:600;letter-spacing:1px;fill:var(--ink)}
+@media(max-width:700px){.home-logo{width:66px;height:66px;margin-top:20px}}
