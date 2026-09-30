@@ -96,3 +96,65 @@ First establish the Experience Architecture, then visual direction, then page st
 
 ## Current Status
 Checkpoint saved before beginning Step 01.
+
+
+---
+
+# CHECKPOINT 02 — FINAL WEB PAGE FORMAT REFERENCE
+
+## Status
+The professional web-page format has been successfully implemented and visually checked by the user. The current version is the reference sample for future educational web projects.
+
+## Reference Web Architecture
+- index.html — minimal learning-hub homepage
+- worksheet.html — dedicated worksheet/answer-key viewer
+- style.css — premium responsive visual system
+- worksheet.css — worksheet-specific presentation and controls
+- script.js — homepage interactions
+- worksheet.js — Markdown loading, worksheet navigation, answer-key routing
+- Markdown files remain the Source of Truth.
+- PDF remains the original article/source layer.
+
+## Reference UX Pattern
+Homepage → Article → Learning Path → Worksheet → Check Answers → Answer Key → Open Worksheet / Previous / Next / Learning Hub
+
+The homepage is intentionally minimal and uncluttered so students can immediately understand and use the learning path.
+
+## Reference Visual Standard
+- Premium editorial + modern academic aesthetic
+- Strong typography hierarchy
+- Generous whitespace
+- Restrained colour palette
+- Clear, explicit navigation controls
+- Responsive desktop/mobile layout
+- No dashboard/file-browser appearance
+- No visual clutter
+- Student-first usability
+
+## Reference Branding
+The final homepage uses a lightweight CSS-only circular MB logo rather than SVG, with:
+- MB in the centre
+- MOHAMMAD BAKHSHANDEH inside the circular mark
+- restrained accent/neutral borders
+- small controlled dimensions
+- cache-busted stylesheet loading when needed
+
+This CSS-only logo implementation is the reference approach for homepage branding in this project.
+
+## Reference Worksheet Viewer Behaviour
+- Back to Learning Hub
+- Previous / Next worksheet navigation
+- Top and bottom Answer Key controls on worksheet pages
+- Answer Key pages provide Open Worksheet and return to the exact worksheet being checked
+- Back to Top support
+- Same branding language across homepage and worksheet viewer
+
+## Important Working Rule
+Do not claim that a web change is finished until the actual resulting page has been checked. Verify the repository code first and, where possible, verify the rendered result. Do not guess about visual problems.
+
+## Current Reference Commits
+- Homepage index.html: 1bb710a30045fe76ac22f25b9c217a641aadf72a
+- Homepage style.css: 736a6b4d5408bc29a3214a64bd58941e7b02514d
+- Worksheet worksheet.html: 7e14ad9b6477c874b3a06285785b1e221e4d1d17
+- Worksheet worksheet.js: d81095ef5836cbf9e1daa00f757b262fd3bc1ef6
+- Worksheet worksheet.css: 1fed1d48123c2a33e45759af00b432f8eb8347a7
