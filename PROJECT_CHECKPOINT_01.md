@@ -89,23 +89,10 @@ Markdown + PDF
 Preferred footer:
 **𝓓𝓸𝓷 𝓠𝓾𝓲𝔁𝓸𝓽𝓮 — Keep Learning. Keep Questioning**
 
-## Working Method
-The project will now be built **step by step**.
-Do not jump directly into coding.
-First establish the Experience Architecture, then visual direction, then page structure/content engine, then implementation and polish.
-
-## Current Status
-Checkpoint saved before beginning Step 01.
-
----
-
-# CHECKPOINT 02 — FINAL WEB PAGE FORMAT REFERENCE
-
-## Status
+## Reference Web Architecture / Template
 The professional web-page format has been implemented and visually checked by the user. This is now the **reference sample/template** for future educational Markdown-to-Web projects.
 
-## Reference Web Architecture
-- `index.html` — minimal Learning Hub homepage
+- `index.html` — compact Learning Hub homepage
 - `worksheet.html` — dedicated worksheet/answer-key reader
 - `style.css` — homepage visual system
 - `worksheet.css` — worksheet-specific visual system
@@ -114,56 +101,48 @@ The professional web-page format has been implemented and visually checked by th
 - Markdown files remain the **Source of Truth**.
 - PDF remains the original article/source layer.
 
-## Reference UX Flow
+### Reference UX Flow
 **Learning Hub → Article → Worksheet → Check Answers → Answer Key → Open Worksheet → Previous / Next / Learning Hub**
 
-### Worksheet page controls
-- `Learning Hub`
-- `Previous`
-- `Next`
-- `Check Answers`
-- `Back to Top`
-- Answer controls appear at both the **top and bottom** of each worksheet.
+Worksheet controls:
+- Learning Hub
+- Previous
+- Next
+- Check Answers
+- Back to Top
+- Answer controls at both top and bottom
 
-### Answer Key page controls
-- No `Check Answers` button on an Answer Key page.
-- Use `Open Worksheet` instead.
-- `Open Worksheet` returns to the **exact worksheet** whose answers are being checked.
-- Same navigation language and branding as the worksheet page.
+Answer Key controls:
+- No Check Answers button on Answer Key pages
+- Open Worksheet returns to the exact worksheet being checked
 
-## Reference Homepage Format
-The homepage is intentionally **compact, clean and uncluttered**. It should not look like a dashboard or file browser.
-
-Core presentation principles:
-- small, controlled typography
-- strong hierarchy without oversized text
+### Reference Visual Standard
+- premium editorial + modern academic
+- compact, clean and uncluttered
+- strong hierarchy without oversized typography
 - generous but efficient whitespace
-- clear worksheet choices
-- student-first navigation
-- premium editorial / modern academic feel
-- easy scanning
+- restrained palette
+- clear navigation
+- responsive desktop/mobile
+- no dashboard/file-browser appearance
+- no old-fashioned school-site appearance
 
-## Reference Branding / Logo
-The homepage and worksheet pages use the same personal visual identity.
-
-Reference logo requirements:
-- circular, elegant and compact
+### Reference Branding / Logo
+- circular, elegant, compact CSS-only MB logo
 - `MB` centred
 - `MOHAMMAD BAKHSHANDEH` incorporated into the circular mark
-- restrained accent/neutral borders
+- restrained border/accent
 - no large black circle
 - no oversized logo
-- CSS-only logo implementation is the reference approach for the homepage
 
 ## Learning Checkpoint Content Format
-The checkpoint introduction is intentionally short and direct.
+Short, direct introduction:
 
-Reference message:
 > It’s been about a week since we read the article and explored it in class. Now it’s time to **put your learning to the test**.
 >
 > This checkpoint is about one thing: **how much of what you learned can you actually use?**
 
-Compact progression table:
+Compact progression:
 
 | STEP | CHECK |
 |---|---|
@@ -178,7 +157,7 @@ Key line:
 **Remembering is the first step. Using is the real test.**
 
 ## Available Worksheets Presentation
-Use a compact list/table rather than long explanatory blocks.
+Use a compact list/table:
 
 | # | AVAILABLE WORKSHEETS |
 |---|---|
@@ -190,13 +169,11 @@ Use a compact list/table rather than long explanatory blocks.
 | 05 | Sentence-Building Progression · A2 → C3+ |
 | 06 | Vocabulary in Context · A2 → C3+ |
 
-Preferred compact instruction:
+Preferred instruction:
 **Choose a worksheet → Do the work → Check your answers → Reflect → Apply.**
 
 ## PDF Reference Format
 The article PDF is for review/reference and is **not the video transcript**.
-
-Compact reference table:
 
 | PDF REFERENCE | DETAIL |
 |---|---|
@@ -207,28 +184,115 @@ Compact reference table:
 | Date | April 11, 2026 |
 | Role in Project | Reference text for the learning project |
 
-## Reference Learning Philosophy
-The worksheets are not merely exercises or answer-checking activities. Their purpose is to move the learner through:
+## IELTS TASK 1 EXTENSION — CURRENT NEW PROJECT
+The user now wants to build a professional **IELTS Writing Task 1 Process Worksheet** using a different uploaded source:
 
-**RECALL → RECOGNISE → UNDERSTAND → PRODUCE → APPLY → REFLECT**
+**How It Works — Understanding Chemistry, 3rd Edition 2026 — The Sulphur Cycle**
 
-The central distinction is:
-**I learned it → I remember it → I can use it.**
+The uploaded PDF is the primary source. It contains the sulphur cycle, including atmospheric release/transformation, wet and dry deposition, plant and animal uptake, organic deposition/decomposition, sulphate runoff, volcanic and industrial activity, sedimentary/mineral storage, microorganisms and human impact.
 
-The final goal is transferable English that can be used independently in the learner's own Writing, Speaking and communication.
+### IELTS Task 1 already drafted
+Task type: **Process Diagram**
 
-## Visual / Content Writing Standard
-For future sections:
-- keep copy concise and to the point
-- avoid long explanatory paragraphs
-- prefer compact professional tables
-- keep headings clear and modern
-- preserve the premium editorial/academic tone
-- do not overcrowd the first screen
-- do not make typography unnecessarily large
+Question:
+
+> The diagram below shows **the natural and human-related processes involved in the sulphur cycle**, from the release of sulphur into the atmosphere to its deposition, uptake by plants and animals, decomposition, and long-term storage.
+>
+> **Summarise the information by selecting and reporting the main features, and make comparisons where relevant.**
+>
+> Write **at least 150 words**.
+
+### IELTS Model Answer Direction
+A Band **8–8.5** model answer was drafted, using:
+- clear paraphrased introduction
+- overview of major stages
+- logical process grouping
+- passive voice
+- sequencing
+- cause/result relationships
+- precise process verbs
+- no unsupported external scientific information
+
+### IELTS Language Tables Planned
+Grammar / structures include:
+- Present Simple
+- Passive Voice
+- Passive + process verb
+- Once + clause
+- Before / After
+- Where + clause
+- Relative clauses
+- While / Whereas
+- Before being + past participle
+- After being + past participle
+- Eventually
+- By + -ing
+
+Vocabulary / collocations include:
+- be released into
+- react with
+- form / produce
+- return to the Earth's surface
+- be deposited on
+- be taken up by
+- be incorporated into
+- be consumed by
+- break down
+- be released back into
+- flow through / enter
+- be stored in
+- volcanic activity
+- burning fossil fuels
+- atmospheric sulphur
+- sulphur dioxide
+- wet and dry deposition
+- plant and animal uptake
+- organic material
+- sulphate runoff
+- oceanic sediments
+- sequencing and cause/result language
+
+### Source Reference for IELTS Task
+| SOURCE | EDITION | SECTION / TOPIC | USE IN THIS TASK |
+|---|---|---|---|
+| *How It Works – Understanding Chemistry* | 3rd Edition · 2026 | *The Sulphur Cycle* | Source material for the IELTS Writing Task 1 Process Diagram & Model Answer |
+
+The complete PDF is also available to students through the supplied Telegram channel link:
+`https://t.me/c/1662637455/8949`
+
+## NEXT PROJECT: INTEGRATED IELTS PROCESS WRITING WORKSHEET
+The user wants **one complete, professional worksheet** for this exact Sulphur Cycle IELTS Task 1, combining:
+
+1. Task / source awareness
+2. Diagram reading and process mapping
+3. Process vocabulary
+4. Collocations
+5. Useful sequencing language
+6. Grammar for process writing
+7. Sentence-building practice
+8. Paragraph-building practice
+9. Overview writing
+10. Full 150+ word Task 1 writing
+11. IELTS self-check using Task Achievement, Coherence & Cohesion, Lexical Resource and Grammatical Range & Accuracy
+12. Reflection and transfer to future Process Tasks
+
+### Intended Learning Path
+**READ THE DIAGRAM → UNDERSTAND THE PROCESS → LEARN THE LANGUAGE → PRACTISE THE STRUCTURES → BUILD SENTENCES → BUILD PARAGRAPHS → WRITE THE TASK → CHECK & IMPROVE**
+
+Working title / concept:
+**IELTS PROCESS WRITING LAB**
+*From Diagram → Language → Structure → Writing → Self-Assessment*
+
+Important design principle:
+This should **not** be a collection of disconnected exercises. Vocabulary, collocations and grammar must come directly from the Sulphur Cycle and feed into the final Writing Task 1.
+
+## Working Method
+Continue step by step. Do not jump directly into the final worksheet.
+Next starting point when the project resumes:
+**Build the complete Master Blueprint for the Integrated IELTS Process Writing Worksheet — Parts, exercise types, progression, answer-key structure and final writing task.**
 
 ## Important Working Rule
-Do not claim that a web change is finished until the actual resulting page has been checked. Verify the repository code first and, where possible, verify the rendered result. Do not guess about visual problems.
+Do not claim that a web change is finished until the actual resulting page has been checked. Verify repository code first and, where possible, verify the rendered result. Do not guess about visual problems.
 
 ## Current Reference Commits
 - Homepage `index.html`: `1bb710a30045fe76ac22f25b9c217a641aadf72a`
@@ -238,4 +302,4 @@ Do not claim that a web change is finished until the actual resulting page has b
 - Worksheet `worksheet.css`: `1fed1d48123c2a33e45759af00b432f8eb8347a7`
 
 ## Checkpoint Purpose
-This document is the project memory/reference for the current web architecture, interaction model, content presentation format, branding direction, and compact writing style. Future changes should build from this reference rather than redesigning the system from scratch.
+This document is the project memory/reference for the current web architecture, interaction model, content presentation format, branding direction, compact writing style, and the new IELTS Task 1 Process Worksheet project. Future chats should resume from the stated **NEXT PROJECT** point rather than restarting or redesigning the system from scratch.
