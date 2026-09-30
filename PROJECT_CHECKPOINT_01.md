@@ -97,64 +97,145 @@ First establish the Experience Architecture, then visual direction, then page st
 ## Current Status
 Checkpoint saved before beginning Step 01.
 
-
 ---
 
 # CHECKPOINT 02 — FINAL WEB PAGE FORMAT REFERENCE
 
 ## Status
-The professional web-page format has been successfully implemented and visually checked by the user. The current version is the reference sample for future educational web projects.
+The professional web-page format has been implemented and visually checked by the user. This is now the **reference sample/template** for future educational Markdown-to-Web projects.
 
 ## Reference Web Architecture
-- index.html — minimal learning-hub homepage
-- worksheet.html — dedicated worksheet/answer-key viewer
-- style.css — premium responsive visual system
-- worksheet.css — worksheet-specific presentation and controls
-- script.js — homepage interactions
-- worksheet.js — Markdown loading, worksheet navigation, answer-key routing
-- Markdown files remain the Source of Truth.
+- `index.html` — minimal Learning Hub homepage
+- `worksheet.html` — dedicated worksheet/answer-key reader
+- `style.css` — homepage visual system
+- `worksheet.css` — worksheet-specific visual system
+- `script.js` — homepage interactions
+- `worksheet.js` — Markdown loading, worksheet navigation and answer-key routing
+- Markdown files remain the **Source of Truth**.
 - PDF remains the original article/source layer.
 
-## Reference UX Pattern
-Homepage → Article → Learning Path → Worksheet → Check Answers → Answer Key → Open Worksheet / Previous / Next / Learning Hub
+## Reference UX Flow
+**Learning Hub → Article → Worksheet → Check Answers → Answer Key → Open Worksheet → Previous / Next / Learning Hub**
 
-The homepage is intentionally minimal and uncluttered so students can immediately understand and use the learning path.
+### Worksheet page controls
+- `Learning Hub`
+- `Previous`
+- `Next`
+- `Check Answers`
+- `Back to Top`
+- Answer controls appear at both the **top and bottom** of each worksheet.
 
-## Reference Visual Standard
-- Premium editorial + modern academic aesthetic
-- Strong typography hierarchy
-- Generous whitespace
-- Restrained colour palette
-- Clear, explicit navigation controls
-- Responsive desktop/mobile layout
-- No dashboard/file-browser appearance
-- No visual clutter
-- Student-first usability
+### Answer Key page controls
+- No `Check Answers` button on an Answer Key page.
+- Use `Open Worksheet` instead.
+- `Open Worksheet` returns to the **exact worksheet** whose answers are being checked.
+- Same navigation language and branding as the worksheet page.
 
-## Reference Branding
-The final homepage uses a lightweight CSS-only circular MB logo rather than SVG, with:
-- MB in the centre
-- MOHAMMAD BAKHSHANDEH inside the circular mark
+## Reference Homepage Format
+The homepage is intentionally **compact, clean and uncluttered**. It should not look like a dashboard or file browser.
+
+Core presentation principles:
+- small, controlled typography
+- strong hierarchy without oversized text
+- generous but efficient whitespace
+- clear worksheet choices
+- student-first navigation
+- premium editorial / modern academic feel
+- easy scanning
+
+## Reference Branding / Logo
+The homepage and worksheet pages use the same personal visual identity.
+
+Reference logo requirements:
+- circular, elegant and compact
+- `MB` centred
+- `MOHAMMAD BAKHSHANDEH` incorporated into the circular mark
 - restrained accent/neutral borders
-- small controlled dimensions
-- cache-busted stylesheet loading when needed
+- no large black circle
+- no oversized logo
+- CSS-only logo implementation is the reference approach for the homepage
 
-This CSS-only logo implementation is the reference approach for homepage branding in this project.
+## Learning Checkpoint Content Format
+The checkpoint introduction is intentionally short and direct.
 
-## Reference Worksheet Viewer Behaviour
-- Back to Learning Hub
-- Previous / Next worksheet navigation
-- Top and bottom Answer Key controls on worksheet pages
-- Answer Key pages provide Open Worksheet and return to the exact worksheet being checked
-- Back to Top support
-- Same branding language across homepage and worksheet viewer
+Reference message:
+> It’s been about a week since we read the article and explored it in class. Now it’s time to **put your learning to the test**.
+>
+> This checkpoint is about one thing: **how much of what you learned can you actually use?**
+
+Compact progression table:
+
+| STEP | CHECK |
+|---|---|
+| 01 · RECALL | What do you remember? |
+| 02 · RECOGNISE | Can you identify it? |
+| 03 · UNDERSTAND | Do you understand how it works? |
+| 04 · PRODUCE | Can you use it yourself? |
+| 05 · APPLY | Can you transfer it to your own English? |
+| 06 · REFLECT | What still needs work? |
+
+Key line:
+**Remembering is the first step. Using is the real test.**
+
+## Available Worksheets Presentation
+Use a compact list/table rather than long explanatory blocks.
+
+| # | AVAILABLE WORKSHEETS |
+|---|---|
+| — | Article Recall & Learning Check |
+| 01 | Grammar in Context — Core |
+| 02 | Grammar in Context — Advanced |
+| 03 | Grammar in Context — Cambridge-Style |
+| 04 | Grammar Pattern Progression · A2 → C3+ |
+| 05 | Sentence-Building Progression · A2 → C3+ |
+| 06 | Vocabulary in Context · A2 → C3+ |
+
+Preferred compact instruction:
+**Choose a worksheet → Do the work → Check your answers → Reflect → Apply.**
+
+## PDF Reference Format
+The article PDF is for review/reference and is **not the video transcript**.
+
+Compact reference table:
+
+| PDF REFERENCE | DETAIL |
+|---|---|
+| Purpose | Review & reference |
+| Type | Original written article — not the video transcript |
+| Title | *Why are kids becoming fussier eaters?* |
+| Source | *The Economist UK* |
+| Date | April 11, 2026 |
+| Role in Project | Reference text for the learning project |
+
+## Reference Learning Philosophy
+The worksheets are not merely exercises or answer-checking activities. Their purpose is to move the learner through:
+
+**RECALL → RECOGNISE → UNDERSTAND → PRODUCE → APPLY → REFLECT**
+
+The central distinction is:
+**I learned it → I remember it → I can use it.**
+
+The final goal is transferable English that can be used independently in the learner's own Writing, Speaking and communication.
+
+## Visual / Content Writing Standard
+For future sections:
+- keep copy concise and to the point
+- avoid long explanatory paragraphs
+- prefer compact professional tables
+- keep headings clear and modern
+- preserve the premium editorial/academic tone
+- do not overcrowd the first screen
+- do not make typography unnecessarily large
 
 ## Important Working Rule
 Do not claim that a web change is finished until the actual resulting page has been checked. Verify the repository code first and, where possible, verify the rendered result. Do not guess about visual problems.
 
 ## Current Reference Commits
-- Homepage index.html: 1bb710a30045fe76ac22f25b9c217a641aadf72a
-- Homepage style.css: 736a6b4d5408bc29a3214a64bd58941e7b02514d
-- Worksheet worksheet.html: 7e14ad9b6477c874b3a06285785b1e221e4d1d17
-- Worksheet worksheet.js: d81095ef5836cbf9e1daa00f757b262fd3bc1ef6
-- Worksheet worksheet.css: 1fed1d48123c2a33e45759af00b432f8eb8347a7
+- Homepage `index.html`: `1bb710a30045fe76ac22f25b9c217a641aadf72a`
+- Homepage `style.css`: `736a6b4d5408bc29a3214a64bd58941e7b02514d`
+- Worksheet `worksheet.html`: `7e14ad9b6477c874b3a06285785b1e221e4d1d17`
+- Worksheet `worksheet.js`: `d81095ef5836cbf9e1daa00f757b262fd3bc1ef6`
+- Worksheet `worksheet.css`: `1fed1d48123c2a33e45759af00b432f8eb8347a7`
+
+## Checkpoint Purpose
+This document is the project memory/reference for the current web architecture, interaction model, content presentation format, branding direction, and compact writing style. Future changes should build from this reference rather than redesigning the system from scratch.
