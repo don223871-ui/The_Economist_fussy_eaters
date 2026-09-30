@@ -8,77 +8,126 @@ const W=[
 ["06_Vocabulary_in_Context_A2_to_C3Plus.md","06 · Vocabulary in Context · A2 → C3+","06_Vocabulary_in_Context_A2_to_C3Plus_ANSWER KEY.md"]
 ];
 
-const ANSWERS=new Set(W.map(x=>x[2]));
-const p=new URLSearchParams(location.search);
-const f=p.get("file");
-const i=W.findIndex(x=>x[0]===f);
-const answerIndex=W.findIndex(x=>x[2]===f);
-const isAnswer=answerIndex>=0;
-const c=document.getElementById("content");
-const m=document.getElementById("meta");
-const ap=document.getElementById("answerLinkTop");
-const ab=document.getElementById("answerLinkBottom");
-const pv=[document.getElementById("prevLinkTop"),document.getElementById("prevLinkBottom")];
-const nx=[document.getElementById("nextLinkTop"),document.getElementById("nextLinkBottom")];
-const pt=[document.getElementById("prevTitleTop"),document.getElementById("prevTitleBottom")];
-const nt=[document.getElementById("nextTitleTop"),document.getElementById("nextTitleBottom")];
-const top=document.getElementById("toTop");
+const params=new URLSearchParams(window.location.search);
+const file=params.get("file")||"";
+const worksheetIndex=W.findIndex(x=>x[0]===file);
+const answerIndex=W.findIndex(x=>x[2]===file);
+const isAnswer=answerIndex!==-1;
+const index=isAnswer?answerIndex:worksheetIndex;
 
-function mdToHtml(md){
-  if(window.marked?.parse) return marked.parse(md,{gfm:true,breaks:false});
-  return "<pre class='markdown-fallback'>"+md.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")+"</pre>";
+const $=id=>document.getElementById(id);
+const content=$("content");
+const meta=$("meta");
+const toTop=$("toTop");
+
+function page(file){
+  return "worksheet.html?file="+encodeURIComponent(file);
 }
 
-async function loadText(file){
-  const local="./"+encodeURIComponent(file).replace(/%2F/g,"/");
-  let r=await fetch(local,{cache:"no-store"});
-  if(r.ok) return r.text();
+function setNav(prev,next){
+  const prevEls=[$("prevLinkTop"),$("prevLinkBottom")];
+  const nextEls=[$("nextLinkTop"),$("nextLinkBottom")];
+  const prevTitles=[$("prevTitleTop"),$("prevTitleBottom")];
+  const nextTitles=[$("nextTitleTop"),$("nextTitleBottom")];
 
-  const raw="https://raw.githubusercontent.com/don223871-ui/The_Economist_fussy_eaters/main/"+encodeURIComponent(file);
-  r=await fetch(raw,{cache:"no-store"});
-  if(r.ok) return r.text();
-
-  throw new Error("HTTP "+r.status);
-}
-
-if(i<0 && !isAnswer){
-  c.innerHTML="<p>Worksheet not found.</p>";
-  document.querySelectorAll(".answer-bar").forEach(x=>x.style.display="none");
-}else{
-  const x=W[isAnswer?answerIndex:i];
-  const currentTitle=isAnswer ? x[1]+" · Answer Key" : x[1];
-  m.textContent=currentTitle;
-  document.title=currentTitle+" · Authentic English";
-
-  loadText(f).then(t=>{
-    c.innerHTML=mdToHtml(t);
-    c.classList.remove("is-loading");
-  }).catch(err=>{
-    c.innerHTML="<div class='load-error'><strong>Unable to load this worksheet.</strong><br><small>"+err.message+"</small></div>";
+  prevEls.forEach((el,n)=>{
+    if(prev){
+      el.href=page(prev[0]);
+      el.removeAttribute("aria-disabled");
+      el.style.opacity="";
+      el.style.pointerEvents="";
+      prevTitles[n].textContent=prev[1];
+    }else{
+      el.href="#";
+      el.setAttribute("aria-disabled","true");
+      el.style.opacity=".35";
+      el.style.pointerEvents="none";
+      prevTitles[n].textContent="Start";
+    }
   });
 
+  nextEls.forEach((el,n)=>{
+    if(next){
+      el.href=page(next[0]);
+      el.removeAttribute("aria-disabled");
+      el.style.opacity="";
+      el.style.pointerEvents="";
+      nextTitles[n].textContent=next[1];
+    }else{
+      el.href="#";
+      el.setAttribute("aria-disabled","true");
+      el.style.opacity=".35";
+      el.style.pointerEvents="none";
+      nextTitles[n].textContent="End";
+    }
+  });
+}
+
+function renderMarkdown(text){
+  if(window.marked && typeof window.marked.parse==="function"){
+    return window.marked.parse(text,{gfm:true,breaks:false});
+  }
+  return "<pre class='markdown-fallback'>"+text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")+"</pre>";
+}
+
+async function loadMarkdown(name){
+  const rawUrl="https://raw.githubusercontent.com/don223871-ui/The_Economist_fussy_eaters/main/"+encodeURIComponent(name);
+  let response=await fetch(rawUrl,{cache:"no-store"});
+  if(response.ok) return response.text();
+
+  response=await fetch("./"+encodeURIComponent(name),{cache:"no-store"});
+  if(response.ok) return response.text();
+
+  throw new Error("The worksheet file could not be loaded.");
+}
+
+function showError(message){
+  content.innerHTML="<div class='load-error'><strong>"+message+"</strong><p>Please refresh the page once and try again.</p></div>";
+}
+
+async function init(){
+  if(!content || !meta) return;
+
+  if(index<0){
+    meta.textContent="WORKSHEET";
+    showError("Worksheet not found.");
+    document.querySelectorAll(".answer-bar").forEach(el=>el.hidden=true);
+    return;
+  }
+
+  const item=W[index];
+  meta.textContent=isAnswer?item[1]+" · ANSWER KEY":item[1];
+  document.title=(isAnswer?item[1]+" · Answer Key":item[1])+" · Authentic English";
+
+  setNav(index>0?W[index-1]:null,index<W.length-1?W[index+1]:null);
+
   if(isAnswer){
-    document.querySelectorAll(".answer-bar").forEach(el=>el.style.display="none");
+    document.querySelectorAll(".answer-bar").forEach(el=>el.hidden=true);
   }else{
-    const answer="worksheet.html?file="+encodeURIComponent(x[2]);
-    ap.href=answer;
-    ab.href=answer;
+    const answerUrl=page(item[2]);
+    $("answerLinkTop").href=answerUrl;
+    $("answerLinkBottom").href=answerUrl;
   }
 
-  if(!isAnswer && i>0){
-    const u="worksheet.html?file="+encodeURIComponent(W[i-1][0]);
-    pv.forEach((e,n)=>{e.href=u;pt[n].textContent=W[i-1][1];});
-  }else{
-    pv.forEach((e,n)=>{e.style.opacity=".35";e.style.pointerEvents="none";pt[n].textContent="Start";});
-  }
+  content.innerHTML="<p class='loading'>Loading worksheet…</p>";
 
-  if(!isAnswer && i<W.length-1){
-    const u="worksheet.html?file="+encodeURIComponent(W[i+1][0]);
-    nx.forEach((e,n)=>{e.href=u;nt[n].textContent=W[i+1][1];});
-  }else{
-    nx.forEach((e,n)=>{e.style.opacity=".35";e.style.pointerEvents="none";nt[n].textContent="End";});
+  try{
+    const text=await loadMarkdown(file);
+    content.innerHTML=renderMarkdown(text);
+  }catch(error){
+    showError(error.message);
   }
 }
 
-window.addEventListener("scroll",()=>top.classList.toggle("show",scrollY>500));
-top.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+window.addEventListener("scroll",()=>{
+  if(toTop) toTop.classList.toggle("show",window.scrollY>500);
+});
+
+if(toTop){
+  toTop.addEventListener("click",event=>{
+    event.preventDefault();
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+}
+
+document.addEventListener("DOMContentLoaded",init);
