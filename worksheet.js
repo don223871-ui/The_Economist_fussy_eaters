@@ -102,7 +102,19 @@ async function init(){
   setNav(index>0?W[index-1]:null,index<W.length-1?W[index+1]:null);
 
   if(isAnswer){
-    document.querySelectorAll(".answer-bar").forEach(el=>el.hidden=true);
+    const worksheetUrl=page(item[0]);
+    const labels=[$("answerLabelTop"),$("answerLabelBottom")];
+    const prompts=[$("answerPromptTop"),$("answerPromptBottom")];
+    const links=[$("answerLinkTop"),$("answerLinkBottom")];
+
+    labels.forEach(el=>{if(el) el.textContent="WORKSHEET";});
+    prompts.forEach(el=>{if(el) el.textContent="Return to the worksheet you are checking.";});
+    links.forEach(el=>{
+      if(!el) return;
+      el.href=worksheetUrl;
+      el.innerHTML='Open Worksheet <span>→</span>';
+      el.classList.add("return-button");
+    });
   }else{
     const answerUrl=page(item[2]);
     $("answerLinkTop").href=answerUrl;
