@@ -9,32 +9,49 @@
 </head>
 <body class="worksheet-page">
 <header class="reader-top">
-  <a href="index.html" class="back">← Learning Hub</a>
-  <div class="logo-mark" aria-label="Mohammad Bakhshandeh">
-    <span class="logo-ring">MOHAMMAD · BAKHSHANDEH ·</span>
-    <strong>MB</strong>
+  <a href="index.html" class="back">← FULT LIST / LEARNING HUB</a>
+  <div class="signature-logo" aria-label="Mohammad Bakhshandeh">
+    <svg viewBox="0 0 120 120" role="img">
+      <defs><path id="logoPath" d="M 60,60 m -46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+      <circle cx="60" cy="60" r="57" class="logo-outer"/>
+      <circle cx="60" cy="60" r="45" class="logo-inner"/>
+      <text class="logo-name"><textPath href="#logoPath" startOffset="50%">MOHAMMAD BAKHSHANDEH · MOHAMMAD BAKHSHANDEH ·</textPath></text>
+      <text x="60" y="67" text-anchor="middle" class="logo-mb">MB</text>
+    </svg>
   </div>
   <span class="reader-label">AUTHENTIC ENGLISH · WORKSHEET</span>
 </header>
+
 <main class="reader" id="top">
   <div class="reader-meta" id="meta"></div>
+
+  <nav class="page-nav page-nav-top" aria-label="Worksheet navigation">
+    <a id="prevLinkTop" class="nav-button" href="#"><span>←</span><div><small>Previous</small><strong id="prevTitleTop"></strong></div></a>
+    <a class="nav-button hub-button" href="index.html"><span>⌂</span><div><small>Back to</small><strong>Learning Hub</strong></div></a>
+    <a id="nextLinkTop" class="nav-button" href="#"><div><small>Next</small><strong id="nextTitleTop"></strong></div><span>→</span></a>
+  </nav>
+
+  <section class="answer-bar answer-bar-top">
+    <span><b>ANSWER KEY</b> · Check your work when you are ready.</span>
+    <a id="answerLinkTop" class="answer-button" href="#">Check Answers <span>→</span></a>
+  </section>
+
   <article id="content" class="markdown-body">
     <p class="loading">Loading worksheet…</p>
   </article>
-  <section class="answer-panel" id="answerPanel">
-    <div>
-      <p class="answer-kicker">CHECK YOUR ANSWERS</p>
-      <h2>Ready to check?</h2>
-      <p>Open the answer key after you have completed the worksheet.</p>
-    </div>
-    <a id="answerLink" class="answer-button" href="#">Open Answer Key <span>→</span></a>
+
+  <section class="answer-bar answer-bar-bottom">
+    <span><b>ANSWER KEY</b> · Ready to check your answers?</span>
+    <a id="answerLinkBottom" class="answer-button" href="#">Open Answer Key <span>→</span></a>
   </section>
-  <nav class="page-nav" aria-label="Worksheet navigation">
-    <a id="prevLink" class="nav-button" href="#"><span>←</span><small>Previous</small><strong id="prevTitle"></strong></a>
-    <a class="nav-button hub-button" href="index.html"><small>Return to</small><strong>Learning Hub</strong></a>
-    <a id="nextLink" class="nav-button" href="#"><small>Next</small><strong id="nextTitle"></strong><span>→</span></a>
+
+  <nav class="page-nav page-nav-bottom" aria-label="Worksheet navigation">
+    <a id="prevLinkBottom" class="nav-button" href="#"><span>←</span><div><small>Previous</small><strong id="prevTitleBottom"></strong></div></a>
+    <a class="nav-button hub-button" href="index.html"><span>⌂</span><div><small>Back to</small><strong>Learning Hub</strong></div></a>
+    <a id="nextLinkBottom" class="nav-button" href="#"><div><small>Next</small><strong id="nextTitleBottom"></strong></div><span>→</span></a>
   </nav>
 </main>
+
 <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 <footer><span>𝓓𝓸𝓷 𝓠𝓾𝓲𝔁𝓸𝓽𝓮</span><span>Keep Learning. Keep Questioning</span></footer>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
